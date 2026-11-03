@@ -1,0 +1,28 @@
+{
+  "seed": 666,
+  "device": "cpu",
+  "precision": "float32",
+  "model": {
+    "input_dim": 40,
+    "hidden_dim": 8,
+    "num_layers": 1,
+    "kernel_size": 3,
+    "dropout": 0.1
+  },
+  "training": {
+    "num_epochs": 2,
+    "batch_size": 2,
+    "num_workers": 0,
+    "min_duration": 0,
+    "grad_clip": 5.0
+  },
+  "sampler": {
+    "group_weights": {"target": 1.0, "background": 1.0},
+    "balance_unit": "sample",
+    "replacement": true,
+    "draws_per_epoch": 10
+  },
+  "optimizer": {"type": "adam", "lr": 0.001, "weight_decay": 0.0001},
+  "scheduler": {"type": "cosine", "min_lr": 0.000001},
+  "spec_augment": {"enabled": true, "num_t_mask": 1, "num_f_mask": 1, "max_t": 20, "max_f": 10}
+}

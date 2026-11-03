@@ -1,0 +1,16 @@
+{
+  "schema": "easykws-preprocess-config/v1",
+  "channel_policy": "reject",
+  "resample": false,
+  "augmentation": {
+    "schema": "easykws-offline-augmentation/v1",
+    "seed": 666,
+    "selectors": {
+      "groups": ["target", "background"],
+      "labels": [0, -1],
+      "origins": ["test-fixture"]
+    },
+    "variants": {"regular": 1, "challenge": 1},
+    "kinds": ["gain", "speed", "filter"]
+  }
+}

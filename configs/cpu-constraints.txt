@@ -1,0 +1,11 @@
+# Verified CPU/FP32 dependency pairing for easykws (recorded 2026-10-31).
+# The development and packaging verification used exactly these versions with
+# CPU wheels from the official PyTorch CPU index, e.g.:
+#   pip install --index-url https://download.pytorch.org/whl/cpu torch==2.6.0 torchaudio==2.6.0
+# Install this project against the pairing with:
+#   pip install -c configs/cpu-constraints.txt ".[preprocess,listen,dev]"
+# Other dependencies resolve from PyPI within the ranges declared in
+# pyproject.toml; this file intentionally pins only the numeric pair that the
+# execution contract binds to. No GPU/CUDA builds are part of v0.1.
+torch==2.6.0
+torchaudio==2.6.0

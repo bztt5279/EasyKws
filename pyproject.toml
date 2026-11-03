@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "easykws"
+version = "0.1.0"
+description = "Custom wake-word data preparation and streaming KWS toolkit"
+requires-python = ">=3.10"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICES.md"]
+dependencies = []
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+preprocess = ["numpy>=1.26,<3", "scipy>=1.11,<2", "soundfile>=0.12,<0.14", "torch==2.6.0", "torchaudio==2.6.0"]
+training = ["numpy>=1.26,<3", "scipy>=1.11,<2", "soundfile>=0.12,<0.14", "torch==2.6.0", "torchaudio==2.6.0"]
+listen = ["numpy>=1.26,<3", "scipy>=1.11,<2", "sounddevice>=0.5,<1", "soundfile>=0.12,<0.14", "torch==2.6.0", "torchaudio==2.6.0"]
+
+[project.scripts]
+easykws-prep = "easykws.prep.cli:main"
+easykws-preprocess = "easykws.preprocess.cli:main"
+easykws-train = "easykws.training.cli:main"
+easykws-listen = "easykws.runtime.listen:main"
+easykws-smoke = "easykws.smoke:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

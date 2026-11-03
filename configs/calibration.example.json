@@ -1,0 +1,10 @@
+{
+  "schema": "easykws-calibration-config/v1",
+  "candidates": ["epoch_0001_attempt_0001.pt", "epoch_0002_attempt_0001.pt"],
+  "threshold_grid": [0.1, 0.5, 0.9],
+  "min_recall": 0.9,
+  "max_fah": 1.0,
+  "trigger": {"confirm_frames": 3, "warmup_frames": 50, "rearm_sec": 0.3, "cooldown_sec": 2.0, "comparison": "ge"},
+  "chunk_samples": 512,
+  "selection_rule": "recall-desc/fah-asc/threshold-desc/candidate-asc"
+}

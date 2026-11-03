@@ -1,0 +1,5 @@
+{
+  "schema": "easykws-preprocess-config/v1",
+  "channel_policy": "reject",
+  "resample": false
+}
